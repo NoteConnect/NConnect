@@ -1,0 +1,33 @@
+{
+  "name": "nconnect",
+  "version": "1.0.0",
+  "description": "A network graph library for DOM nodes",
+  "main": "index.js",
+  "scripts": {
+    "dev": "rollup -c -w",
+    "build": "rollup -c"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/NoteConnect/NConnect.git"
+  },
+  "author": "Hung Nguyen <viethungax@gmail.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/NoteConnect/NConnect/issues"
+  },
+  "homepage": "https://github.com/NoteConnect/NConnect#readme",
+  "devDependencies": {
+    "@types/jest": "^23.3.9",
+    "jest": "^23.6.0",
+    "rollup": "^0.67.3",
+    "rollup-plugin-commonjs": "^9.2.0",
+    "rollup-plugin-typescript": "^1.0.0",
+    "tslib": "^1.9.3",
+    "typescript": "^3.1.6"
+  },
+  "dependencies": {
+    "gintersect": "^0.1.0",
+    "simplesvg": "^0.1.1"
+  }
+}

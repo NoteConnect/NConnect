@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>NConnect</title>
+    <style>
+      body,
+      html {
+        width: 100%;
+        height: 100vh;
+        padding: 0;
+        margin: 0;
+      }
+      div {
+        position: absolute;
+        width: 40px;
+        height: 40px;
+      }
+      #div1 {
+        top: 20px;
+        left: 40px;
+        background: red;
+      }
+      #div2 {
+        top: 200px;
+        left: 150px;
+        background: green;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="div1" data-node-id="1"></div>
+    <div id="div2" data-node-id="2"></div>
+    <script src="../../dist/nconnect.js"></script>
+    <script>
+      const nconnect = new NConnect(document.body);
+      nconnect.registerNodes("div", { dragable: () => true });
+      nconnect.addLink("1", "2");
+    </script>
+  </body>
+</html>
