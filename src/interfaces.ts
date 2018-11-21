@@ -8,6 +8,12 @@ export interface IRegisterNodesOption {
 export interface INConnectMethods {
   registerNodes(selector: string, option: IRegisterNodesOption): void;
   addLink(fromId: string, toId: string, data: any): void;
+  forEachLinkedNode(
+    nodeId: string,
+    callback: (node: HTMLElement, link: Link) => void
+  ): void;
+  forEachLink(callback: (link: Link) => void): void;
+  forEachNode(callback: (node: Node) => void): void;
 }
 
 export interface IConnectElementOtion {
