@@ -8,7 +8,7 @@ NConnect is the main, only class for our api. All the avaiable methods are in th
 
 Initialize an instance of NConnect.
 
-- `root` <[HTMLDivElement]>
+- `root` <[HTMLElement]> The root element
 
 ### nconnect.registerNodes(selector, options)
 
@@ -32,6 +32,17 @@ Add a link between 2 nodes
 - `nodeId1` <[String]> Id of the first node
 - `nodeId2` <[String]> Id of the second node
 - `data` Anything to use as data for the link (will be available under `data` property of each link)
+
+### nconnect.renderLink(callback)
+
+Add a custom link renderer to handle custom link render
+
+> **Please note:** At this stage, the link `ui` property will be undefined
+
+- `callback` <[function]([Link], [String])>
+  - `link` The current link between 2 nodes
+  - `linkData` The data generated for link's path element
+  - returns: <[SVGPathElement]> The custom svg path element for the link UI
 
 ### nconnect.forEachLinkedNode(nodeId, callback)
 
@@ -63,3 +74,4 @@ Loop through each node in the graph
 [htmlelement]: https://developer.mozilla.org/en-US/docs/Web/API/HTMLElement
 [boolean]: https://developer.mozilla.org/en-US/docs/Glossary/Boolean
 [link]: ./dataType.md#link
+[svgpathelement]: https://developer.mozilla.org/en-US/docs/Web/API/SVGPathElement

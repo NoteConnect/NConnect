@@ -82,6 +82,10 @@ export default class NConnect implements INConnectMethods {
     this.links.set(link.id, link);
   }
 
+  /**
+   * Add link renderer to handle custom link render
+   * @param callback a link renderer to handle custom link render
+   */
   public renderLink(
     callback: (link: Link, linkData: string) => SVGPathElement
   ) {
