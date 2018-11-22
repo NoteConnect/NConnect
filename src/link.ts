@@ -20,7 +20,7 @@ export function connectElements({
   const svgElement: SVGElement = svg("svg");
 
   const newpath = hasCustomLinkRenderer
-    ? linkRenderer(link)
+    ? linkRenderer(link, linkData)
     : _defaultLinkRenderer(linkData);
 
   // default arrrow

@@ -1,3 +1,4 @@
+import svg from "simplesvg";
 import { INConnectMethods, IRegisterNodesOption } from "./interfaces";
 import { connectElements, makeLinkFollow } from "./link";
 import Link from "./models/link";
@@ -7,10 +8,12 @@ export default class NConnect implements INConnectMethods {
   private root: HTMLDivElement;
   private nodes: Map<string, HTMLDivElement> = new Map();
   private links: Map<string, Link> = new Map();
-  private linkRenderer: (link: Link) => SVGPathElement;
+  private linkRenderer: (link: Link, linkData: string) => SVGPathElement;
+  private svg: any;
 
   constructor(root: HTMLDivElement) {
     this.root = root;
+    this.svg = svg;
   }
 
   /**
@@ -77,6 +80,12 @@ export default class NConnect implements INConnectMethods {
       root: this.root
     });
     this.links.set(link.id, link);
+  }
+
+  public renderLink(
+    callback: (link: Link, linkData: string) => SVGPathElement
+  ) {
+    this.linkRenderer = callback;
   }
 
   /**

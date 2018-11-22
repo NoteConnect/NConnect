@@ -20,7 +20,7 @@ export interface IConnectElementOtion {
   link: Link;
   elementFrom: HTMLDivElement;
   elementTo: HTMLDivElement;
-  linkRenderer: (link: Link) => SVGPathElement;
+  linkRenderer: (link: Link, linkData: string) => SVGPathElement;
   root: HTMLDivElement;
 }
 
