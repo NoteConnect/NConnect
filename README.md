@@ -2,7 +2,7 @@
 
 _A graphing library for DOM nodes_
 
-![](./assets/intro.gif)
+<p align="center"><img src="./assets/intro.gif" width="70%" /></p>
 
 ## About this project
 
