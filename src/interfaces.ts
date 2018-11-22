@@ -13,7 +13,7 @@ export interface INConnectMethods {
     callback: (node: HTMLElement, link: Link) => void
   ): void;
   forEachLink(callback: (link: Link) => void): void;
-  forEachNode(callback: (node: Node) => void): void;
+  forEachNode(callback: (node: HTMLElement) => void): void;
 }
 
 export interface IConnectElementOtion {

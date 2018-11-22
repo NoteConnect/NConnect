@@ -113,7 +113,7 @@ export default class NConnect implements INConnectMethods {
    * Loop through each node in list
    * @param callback callback for each node
    */
-  public forEachNode(callback: (node: Node) => void) {
+  public forEachNode(callback: (node: HTMLElement) => void) {
     this.nodes.forEach((node) => callback(node));
   }
 }
