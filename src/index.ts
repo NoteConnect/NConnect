@@ -1,8 +1,12 @@
 import svg from "simplesvg";
-import { INConnectMethods, IRegisterNodesOption } from "./interfaces";
+import {
+  INConnectMethods,
+  INConnectOptions,
+  IRegisterNodesOption
+} from "./interfaces";
 import { connectElements, makeLinkFollow } from "./link";
 import Link from "./models/link";
-import { makeDragableDiv } from "./util";
+import { dragScrollViewer, makeDragableDiv } from "./util";
 
 export default class NConnect implements INConnectMethods {
   private root: HTMLDivElement;
@@ -11,9 +15,12 @@ export default class NConnect implements INConnectMethods {
   private linkRenderer: (link: Link, linkData: string) => SVGPathElement;
   private svg: any;
 
-  constructor(root: HTMLDivElement) {
+  constructor(root: HTMLDivElement, option: INConnectOptions) {
     this.root = root;
     this.svg = svg;
+    if (option && option.dragScrollViewer) {
+      dragScrollViewer(this.root);
+    }
   }
 
   /**

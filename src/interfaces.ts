@@ -16,6 +16,10 @@ export interface INConnectMethods {
   forEachNode(callback: (node: HTMLElement) => void): void;
 }
 
+export interface INConnectOptions {
+  dragScrollViewer: boolean;
+}
+
 export interface IConnectElementOtion {
   link: Link;
   elementFrom: HTMLDivElement;

@@ -37,6 +37,7 @@ export function makeDragableDiv(
   function dragMouseDown(e: MouseEvent) {
     e = e || window.event;
     e.preventDefault();
+    e.stopPropagation();
     pos3 = e.clientX;
     pos4 = e.clientY;
     document.onmouseup = closeDragElement;
@@ -46,6 +47,7 @@ export function makeDragableDiv(
   function elementDrag(e: MouseEvent) {
     e = e || window.event;
     e.preventDefault();
+    e.stopPropagation();
     pos1 = pos3 - e.clientX;
     pos2 = pos4 - e.clientY;
     pos3 = e.clientX;
@@ -62,4 +64,30 @@ export function makeDragableDiv(
     document.onmouseup = null;
     document.onmousemove = null;
   }
+}
+
+export function dragScrollViewer(viewer: HTMLElement) {
+  let isDragging = false;
+  let originalX: number = 0;
+  let originalY: number = 0;
+  viewer.addEventListener("mousedown", (e) => {
+    e.preventDefault();
+    isDragging = true;
+    originalX = viewer.scrollLeft + e.pageX;
+    originalY = viewer.scrollTop + e.pageY;
+  });
+
+  viewer.addEventListener("mouseup", (e) => {
+    isDragging = false;
+  });
+
+  viewer.addEventListener("mousemove", (e: MouseEvent) => {
+    e.preventDefault();
+    if (isDragging) {
+      const newX = originalX - e.pageX;
+      const newY = originalY - e.pageY;
+      viewer.scrollLeft = newX;
+      viewer.scrollTop = newY;
+    }
+  });
 }
