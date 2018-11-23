@@ -2,7 +2,7 @@
   "name": "nconnect",
   "version": "1.0.0",
   "description": "A network graph library for DOM nodes",
-  "main": "index.js",
+  "main": "dist/nconnect.js",
   "scripts": {
     "dev": "rollup -c -w",
     "build": "rollup -c"
