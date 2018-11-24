@@ -4,11 +4,16 @@
 
 NConnect is the main, only class for our api. All the avaiable methods are in this class.
 
-### constructor(root)
+### constructor(root, options)
 
 Initialize an instance of NConnect.
 
 - `root` <[HTMLElement]> The root element
+- `options` <[Object]>
+  - `dragScrollViewer`: <[Boolean]> Allow users to scroll the overflow part by dragging
+  - `onScroll`: <[function](<[Number]>, <[Number]>)> A callback when the graph is scrolled
+    - `x`: <[Number]> The scroll left
+    - `y`: <[Number]> The scroll top
 
 ### nconnect.registerNodes(selector, options)
 
@@ -24,6 +29,7 @@ Register nodes to be used by the nconnect system.
   - `dragable` <[function]([HTMLElement])> A function to be called using an argument:
     - `node` <[HTMLElement]> current node about to be registered
     - returns: <[Boolean]> Indicating a node can be dragable or not
+  - `onChange`: <[function]()> A function to be called when a node is dragged
 
 ### nconnect.addLink(nodeId1, nodeId2, data)
 
@@ -75,3 +81,4 @@ Loop through each node in the graph
 [boolean]: https://developer.mozilla.org/en-US/docs/Glossary/Boolean
 [link]: ./dataType.md#link
 [svgpathelement]: https://developer.mozilla.org/en-US/docs/Web/API/SVGPathElement
+[number]: https://developer.mozilla.org/en-US/docs/Glossary/Number
