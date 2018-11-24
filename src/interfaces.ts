@@ -3,6 +3,7 @@ import Link from "./models/link";
 export interface IRegisterNodesOption {
   exclude(node: HTMLDivElement): boolean;
   dragable(node: HTMLDivElement): boolean;
+  onChange(): void;
 }
 
 export interface INConnectMethods {

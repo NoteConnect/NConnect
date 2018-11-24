@@ -70,14 +70,14 @@ export function dragScrollViewer(viewer: HTMLElement) {
   let isDragging = false;
   let originalX: number = 0;
   let originalY: number = 0;
-  viewer.addEventListener("mousedown", (e) => {
+  viewer.addEventListener("mousedown", (e: MouseEvent) => {
     e.preventDefault();
     isDragging = true;
     originalX = viewer.scrollLeft + e.pageX;
     originalY = viewer.scrollTop + e.pageY;
   });
 
-  viewer.addEventListener("mouseup", (e) => {
+  viewer.addEventListener("mouseup", () => {
     isDragging = false;
   });
 

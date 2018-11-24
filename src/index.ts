@@ -28,11 +28,12 @@ export default class NConnect implements INConnectMethods {
    * @param selector DOM Selector for the nodes to register
    * @param option Option for registering nodes
    */
-  public registerNodes(selector: string, option: IRegisterNodesOption): void {
+  public registerNodes(selector: string, option: IRegisterNodesOption) {
     const nodes = this.root.querySelectorAll(selector);
     const numberOfNodes = nodes.length;
     const hasExclude = option && typeof option.exclude === "function";
     const hasDragable = option && typeof option.dragable === "function";
+    const hasOnChange = option && typeof option.onChange === "function";
     for (let i = 0; i < numberOfNodes; i++) {
       const node = nodes[i] as HTMLDivElement;
       if (!node.dataset.nodeId) {
@@ -55,6 +56,9 @@ export default class NConnect implements INConnectMethods {
                 );
               }
               makeLinkFollow.call(this, node.dataset.nodeId);
+              if (hasOnChange) {
+                option.onChange();
+              }
             }
           });
         }
