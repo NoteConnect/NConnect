@@ -19,6 +19,7 @@ export interface INConnectMethods {
 
 export interface INConnectOptions {
   dragScrollViewer: boolean;
+  onScroll(x: number, y: number): void;
 }
 
 export interface IConnectElementOtion {

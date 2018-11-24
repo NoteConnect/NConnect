@@ -66,7 +66,10 @@ export function makeDragableDiv(
   }
 }
 
-export function dragScrollViewer(viewer: HTMLElement) {
+export function dragScrollViewer(
+  viewer: HTMLElement,
+  option?: { onDrag(x: number, y: number): void }
+) {
   let isDragging = false;
   let originalX: number = 0;
   let originalY: number = 0;
@@ -88,6 +91,9 @@ export function dragScrollViewer(viewer: HTMLElement) {
       const newY = originalY - e.pageY;
       viewer.scrollLeft = newX;
       viewer.scrollTop = newY;
+      if (option && typeof option.onDrag === "function") {
+        option.onDrag(newX, newY);
+      }
     }
   });
 }

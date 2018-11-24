@@ -19,7 +19,13 @@ export default class NConnect implements INConnectMethods {
     this.root = root;
     this.svg = svg;
     if (option && option.dragScrollViewer) {
-      dragScrollViewer(this.root);
+      if (typeof option.onScroll === "function") {
+        dragScrollViewer(this.root, {
+          onDrag: option.onScroll
+        });
+      } else {
+        dragScrollViewer(this.root);
+      }
     }
   }
 
