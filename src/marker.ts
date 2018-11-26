@@ -1,8 +1,9 @@
 import svg from "simplesvg";
 
 export function createArrowMarker() {
+  const hash = Math.random().toString(36).substring(2, 15) + Math.random().toString(36).substring(2, 15);
   const marker = svg("marker", {
-    id: "Triangle",
+    id: `arrow_${hash}`,
     viewBox: "0 0 10 10",
     refX: "8",
     refY: "5",

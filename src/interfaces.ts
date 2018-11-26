@@ -33,6 +33,7 @@ export interface IConnectElementOtion {
 export interface ILinkUI {
   svg: SVGElement;
   path: SVGPathElement;
+  arrow?: SVGMarkerElement;
 }
 
 export interface IMakeDragableNodeOption {

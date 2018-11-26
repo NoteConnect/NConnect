@@ -19,12 +19,12 @@ export function connectElements({
   const linkData: string = calculateLinkData(elementFrom, elementTo);
   const svgElement: SVGElement = svg("svg");
 
-  const newpath = hasCustomLinkRenderer
-    ? linkRenderer(link, linkData)
-    : _defaultLinkRenderer(linkData);
-
   // default arrrow
   const marker = createArrowMarker();
+  const newpath = hasCustomLinkRenderer
+    ? linkRenderer(link, linkData)
+    : _defaultLinkRenderer(linkData, marker);
+
   const defs = svg("defs");
   defs.appendChild(marker);
   svgElement.appendChild(defs);
@@ -37,18 +37,24 @@ export function connectElements({
     svg: svgElement,
     path: newpath
   };
+  if (!hasCustomLinkRenderer) {
+    link.ui.arrow = marker;
+  }
 }
 
 /**
  * Default link renderer
  * @param linkData Path data for link
  */
-function _defaultLinkRenderer(linkData: string): SVGPathElement {
+function _defaultLinkRenderer(
+  linkData: string,
+  arrow: SVGMarkerElement
+): SVGPathElement {
   return svg("path", {
     "d": linkData,
     "stroke": "black",
     "stroke-width": "3",
-    "marker-end": "url(#Triangle)"
+    "marker-end": `url(#${arrow.getAttribute("id")})`
   });
 }
 
