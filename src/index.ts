@@ -121,9 +121,9 @@ export default class NConnect implements INConnectMethods {
     this.links.forEach((link) => {
       let element = null;
       if (link.from === nodeId) {
-        element = this.nodes.get(link.from);
-      } else if (link.to === nodeId) {
         element = this.nodes.get(link.to);
+      } else if (link.to === nodeId) {
+        element = this.nodes.get(link.from);
       }
       if (element) {
         callback(element, link);

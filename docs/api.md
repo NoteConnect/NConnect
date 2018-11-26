@@ -52,7 +52,7 @@ Add a custom link renderer to handle custom link render
 
 ### nconnect.forEachLinkedNode(nodeId, callback)
 
-Loop through each note that linked with a specific node
+Loop through each node that linked with a specific node
 
 - `nodeId` <[String]> Id of a node
 - `callback` <[function]([HTMLElement], [Link])>
