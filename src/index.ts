@@ -146,4 +146,12 @@ export default class NConnect implements INConnectMethods {
   public forEachNode(callback: (node: HTMLElement) => void) {
     this.nodes.forEach((node) => callback(node));
   }
+
+  /**
+   * Make link follow a node when it changed (resize or move, etc)
+   * @param nodeId NoteID to follow
+   */
+  public makeLinkFollow(nodeId: string) {
+    makeLinkFollow.call(this, nodeId);
+  }
 }

@@ -73,6 +73,12 @@ Loop through each node in the graph
 - `callback` <[function]([HTMLElement])> A function to be called on every loop with an argument:
   - `node` <[HTMLElement]> The DOM node registered in the graph
 
+### nconnect.makeLinkFollow(nodeId)
+
+Re-calculate link position and make link follow a node when it appearance changed (moved or resized, etc)
+
+- `nodeId` <[String]> The id of the node
+
 [htmldivelement]: https://developer.mozilla.org/en-US/docs/Web/API/HTMLDivElement
 [string]: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String
 [object]: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object
