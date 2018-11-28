@@ -15,7 +15,9 @@ export interface INConnectMethods {
   ): void;
   forEachLink(callback: (link: Link) => void): void;
   forEachNode(callback: (node: HTMLElement) => void): void;
-  makeLinkFollow(noteId: string): void;
+  makeLinkFollow(nodeId: string): void;
+  pinNode(nodeId: string): void;
+  unPinNode(nodeId: string): void;
 }
 
 export interface INConnectOptions {

@@ -79,6 +79,18 @@ Re-calculate link position and make link follow a node when it appearance change
 
 - `nodeId` <[String]> The id of the node
 
+### nconnect.pinNode(nodeId)
+
+Pin a node a stop it from moving
+
+- `nodeId` <[String]> The id of the node
+
+### nconnect.unPinNode(nodeId)
+
+Un-pin a node, opposite of `nconnect.pinNode`. Allow node to moving freely if it has been registered.
+
+- `nodeId` <[String]> The id of the node
+
 [htmldivelement]: https://developer.mozilla.org/en-US/docs/Web/API/HTMLDivElement
 [string]: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String
 [object]: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object

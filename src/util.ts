@@ -48,6 +48,9 @@ export function makeDragableDiv(
     e = e || window.event;
     e.preventDefault();
     e.stopPropagation();
+    if (element.dataset.pinned === "true") {
+      return;
+    }
     pos1 = pos3 - e.clientX;
     pos2 = pos4 - e.clientY;
     pos3 = e.clientX;

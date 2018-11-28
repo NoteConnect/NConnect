@@ -154,4 +154,28 @@ export default class NConnect implements INConnectMethods {
   public makeLinkFollow(nodeId: string) {
     makeLinkFollow.call(this, nodeId);
   }
+
+  /**
+   * Pin node which will stop node from moving
+   * @param nodeId NoteID to pin
+   */
+  public pinNode(nodeId: string) {
+    const node = this.nodes.get(nodeId);
+    if (!node) {
+      throw new Error(`[NConnect] Node with id ${nodeId} is not found`);
+    }
+    node.dataset.pinned = "true";
+  }
+
+  /**
+   * Un-pin node, opposite of pin node
+   * @param nodeId NoteID to un-pin
+   */
+  public unPinNode(nodeId: string) {
+    const node = this.nodes.get(nodeId);
+    if (!node) {
+      throw new Error(`[NConnect] Node with id ${nodeId} is not found`);
+    }
+    node.dataset.pinned = "false";
+  }
 }
