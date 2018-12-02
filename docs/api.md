@@ -38,6 +38,7 @@ Add a link between 2 nodes
 - `nodeId1` <[String]> Id of the first node
 - `nodeId2` <[String]> Id of the second node
 - `data` Anything to use as data for the link (will be available under `data` property of each link)
+- returns: <[Link]> The generated link
 
 ### nconnect.renderLink(callback)
 

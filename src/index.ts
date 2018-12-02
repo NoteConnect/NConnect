@@ -79,7 +79,7 @@ export default class NConnect implements INConnectMethods {
    * @param toId ID of the second node
    * @param data Data for the link
    */
-  public addLink(fromId: string, toId: string, data: any): void {
+  public addLink(fromId: string, toId: string, data: any): Link {
     const link = new Link(fromId, toId, data);
     const node1 = this.nodes.get(fromId);
     const node2 = this.nodes.get(toId);
@@ -97,6 +97,7 @@ export default class NConnect implements INConnectMethods {
       root: this.root
     });
     this.links.set(link.id, link);
+    return link;
   }
 
   /**
