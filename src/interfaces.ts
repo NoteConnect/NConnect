@@ -7,6 +7,10 @@ export interface IRegisterNodesOption {
 }
 
 export interface INConnectMethods {
+  renderLink: (
+    callback: (link: Link, linkData: string) => SVGPathElement
+  ) => void;
+  onLinkCreated(callback: (link: Link) => void): void;
   registerNodes(selector: string, option: IRegisterNodesOption): void;
   addLink(fromId: string, toId: string, data: any): void;
   forEachLinkedNode(
@@ -23,7 +27,6 @@ export interface INConnectMethods {
 export interface INConnectOptions {
   dragScrollViewer: boolean;
   onScroll(x: number, y: number): void;
-  onLinkClick(e: MouseEvent): void;
 }
 
 export interface IConnectElementOtion {
@@ -31,7 +34,6 @@ export interface IConnectElementOtion {
   elementFrom: HTMLDivElement;
   elementTo: HTMLDivElement;
   linkRenderer: (link: Link, linkData: string) => SVGPathElement;
-  onLinkClickHandler: (e: MouseEvent) => void;
   root: HTMLDivElement;
 }
 
