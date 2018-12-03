@@ -71,13 +71,18 @@ export function makeDragableDiv(
 
 export function dragScrollViewer(
   viewer: HTMLElement,
-  option?: { onDrag(x: number, y: number): void }
+  option?: { useRightMouse?: boolean; onDrag?(x: number, y: number): void }
 ) {
   let isDragging = false;
   let originalX: number = 0;
   let originalY: number = 0;
   viewer.addEventListener("mousedown", (e: MouseEvent) => {
     e.preventDefault();
+    if (e.button === 2) {
+      if (option && !option.useRightMouse) {
+        return;
+      }
+    }
     isDragging = true;
     originalX = viewer.scrollLeft + e.pageX;
     originalY = viewer.scrollTop + e.pageY;

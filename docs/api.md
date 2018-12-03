@@ -14,8 +14,7 @@ Initialize an instance of NConnect.
   - `onScroll`: <[function](<[Number]>, <[Number]>)> A callback when the graph is scrolled
     - `x`: <[Number]> The scroll left
     - `y`: <[Number]> The scroll top
-  - `onLinkClick`: <[function]>(<[MouseEvent]>) A callback when the link between each note has been clicked.
-    - `ev`: <[MouseEvent]> The mouse event
+  - `useRightMouse`: <[Boolean]> Allow drag scroll viewer using right mouse click
 
 ### nconnect.registerNodes(selector, options)
 

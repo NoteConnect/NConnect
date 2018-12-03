@@ -26,6 +26,7 @@ export interface INConnectMethods {
 
 export interface INConnectOptions {
   dragScrollViewer: boolean;
+  dragScrollViewerWithRightMouse: boolean;
   onScroll(x: number, y: number): void;
 }
 

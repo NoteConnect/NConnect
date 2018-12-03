@@ -22,10 +22,13 @@ export default class NConnect implements INConnectMethods {
     if (option) {
       if (option.dragScrollViewer && typeof option.onScroll === "function") {
         dragScrollViewer(this.root, {
-          onDrag: option.onScroll
+          onDrag: option.onScroll,
+          useRightMouse: option.dragScrollViewerWithRightMouse
         });
       } else if (option.dragScrollViewer) {
-        dragScrollViewer(this.root);
+        dragScrollViewer(this.root, {
+          useRightMouse: option.dragScrollViewerWithRightMouse
+        });
       }
     }
   }
