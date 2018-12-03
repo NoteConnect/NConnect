@@ -13,18 +13,22 @@ export default class NConnect implements INConnectMethods {
   private nodes: Map<string, HTMLDivElement> = new Map();
   private links: Map<string, Link> = new Map();
   private linkRenderer: (link: Link, linkData: string) => SVGPathElement;
+  private onLinkClickHandler: (e: MouseEvent) => void;
   private svg: any;
 
   constructor(root: HTMLDivElement, option: INConnectOptions) {
     this.root = root;
     this.svg = svg;
-    if (option && option.dragScrollViewer) {
-      if (typeof option.onScroll === "function") {
+    if (option) {
+      if (option.dragScrollViewer && typeof option.onScroll === "function") {
         dragScrollViewer(this.root, {
           onDrag: option.onScroll
         });
-      } else {
+      } else if (option.dragScrollViewer) {
         dragScrollViewer(this.root);
+      }
+      if (option.onLinkClick && typeof option.onLinkClick === "function") {
+        this.onLinkClickHandler = option.onLinkClick;
       }
     }
   }
@@ -94,6 +98,7 @@ export default class NConnect implements INConnectMethods {
       elementFrom: node1,
       elementTo: node2,
       linkRenderer: this.linkRenderer,
+      onLinkClickHandler: this.onLinkClickHandler,
       root: this.root
     });
     this.links.set(link.id, link);

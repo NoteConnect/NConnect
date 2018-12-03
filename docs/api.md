@@ -14,6 +14,8 @@ Initialize an instance of NConnect.
   - `onScroll`: <[function](<[Number]>, <[Number]>)> A callback when the graph is scrolled
     - `x`: <[Number]> The scroll left
     - `y`: <[Number]> The scroll top
+  - `onLinkClick`: <[function]>(<[MouseEvent]>) A callback when the link between each note has been clicked.
+    - `ev`: <[MouseEvent]> The mouse event
 
 ### nconnect.registerNodes(selector, options)
 
@@ -101,3 +103,4 @@ Un-pin a node, opposite of `nconnect.pinNode`. Allow node to moving freely if it
 [link]: ./dataType.md#link
 [svgpathelement]: https://developer.mozilla.org/en-US/docs/Web/API/SVGPathElement
 [number]: https://developer.mozilla.org/en-US/docs/Glossary/Number
+[mouseevent]: https://developer.mozilla.org/en-US/docs/Web/API/MouseEvent

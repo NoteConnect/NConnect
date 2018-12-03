@@ -12,6 +12,7 @@ export function connectElements({
   elementFrom,
   elementTo,
   linkRenderer,
+  onLinkClickHandler,
   root
 }: IConnectElementOtion) {
   const hasCustomLinkRenderer =
@@ -40,6 +41,7 @@ export function connectElements({
   if (!hasCustomLinkRenderer) {
     link.ui.arrow = marker;
   }
+  newpath.onclick = onLinkClickHandler;
 }
 
 /**

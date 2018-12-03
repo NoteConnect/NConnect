@@ -23,6 +23,7 @@ export interface INConnectMethods {
 export interface INConnectOptions {
   dragScrollViewer: boolean;
   onScroll(x: number, y: number): void;
+  onLinkClick(e: MouseEvent): void;
 }
 
 export interface IConnectElementOtion {
@@ -30,6 +31,7 @@ export interface IConnectElementOtion {
   elementFrom: HTMLDivElement;
   elementTo: HTMLDivElement;
   linkRenderer: (link: Link, linkData: string) => SVGPathElement;
+  onLinkClickHandler: (e: MouseEvent) => void;
   root: HTMLDivElement;
 }
 
