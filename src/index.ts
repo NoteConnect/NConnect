@@ -6,7 +6,7 @@ import {
 } from "./interfaces";
 import { connectElements, makeLinkFollow } from "./link";
 import Link from "./models/link";
-import { dragScrollViewer, makeDragableDiv } from "./util";
+import { dragScrollViewer, isCollide, makeDragableDiv } from "./util";
 
 export default class NConnect implements INConnectMethods {
   private root: HTMLDivElement;
@@ -151,6 +151,28 @@ export default class NConnect implements INConnectMethods {
    */
   public forEachNode(callback: (node: HTMLElement) => void) {
     this.nodes.forEach((node) => callback(node));
+  }
+
+  /**
+   * Loop through each collided node with the specified node
+   * @param nodeId The id of the node
+   * @param callback Callback for each collided node with the specified node
+   */
+  public forEachCollidedNode(
+    nodeId: string,
+    callback: (node: HTMLElement, nodeId: string) => void
+  ) {
+    const targetNode = this.nodes.get(nodeId);
+    if (!targetNode) {
+      return;
+    }
+    this.nodes.forEach((node, currentNodeId) => {
+      if (currentNodeId !== nodeId) {
+        if (isCollide(node, targetNode)) {
+          callback(node, currentNodeId);
+        }
+      }
+    });
   }
 
   /**

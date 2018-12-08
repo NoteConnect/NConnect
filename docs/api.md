@@ -75,6 +75,15 @@ Loop through each node in the graph
 - `callback` <[function]([HTMLElement])> A function to be called on every loop with an argument:
   - `node` <[HTMLElement]> The DOM node registered in the graph
 
+### nconnect.forEachCollidedNode(nodeId, callback)
+
+Loop through each collided node with the specified node
+
+- `nodeId` <[String]> The id of the node
+- `callback` <[function]([HTMLElement], [String])> A function to be called on every loop with an argument:
+  - `node` <[HTMLElement]> The DOM node collided with the specified node
+  - `nodeId` <[String]> Id of the current collided node
+
 ### nconnect.makeLinkFollow(nodeId)
 
 Re-calculate link position and make link follow a node when it appearance changed (moved or resized, etc)

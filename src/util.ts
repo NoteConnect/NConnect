@@ -19,6 +19,17 @@ export function intersectRect(
   );
 }
 
+export function isCollide(element1: HTMLElement, element2: HTMLElement) {
+  const rect1 = element1.getBoundingClientRect();
+  const rect2 = element2.getBoundingClientRect();
+  return !(
+    rect1.right < rect2.left ||
+    rect1.left > rect2.right ||
+    rect1.bottom < rect2.top ||
+    rect1.top > rect2.bottom
+  );
+}
+
 export function getElementPosition(element: HTMLElement) {
   const x = element.offsetLeft + element.clientWidth * 0.5;
   const y = element.offsetTop + element.clientHeight * 0.5;
