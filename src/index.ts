@@ -59,6 +59,7 @@ export default class NConnect implements INConnectMethods {
       if (hasDragable) {
         if (option.dragable(node)) {
           makeDragableDiv(node, {
+            constraintNegative: option.constraintNegative,
             onDrag: () => {
               if (!node.dataset.nodeId) {
                 throw new Error(

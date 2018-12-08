@@ -66,8 +66,14 @@ export function makeDragableDiv(
     pos2 = pos4 - e.clientY;
     pos3 = e.clientX;
     pos4 = e.clientY;
-    element.style.top = element.offsetTop - pos2 + "px";
-    element.style.left = element.offsetLeft - pos1 + "px";
+    let y = element.offsetTop - pos2;
+    let x = element.offsetLeft - pos1;
+    if (option && option.constraintNegative) {
+      y = y < 0 ? 0 : y;
+      x = x < 0 ? 0 : x;
+    }
+    element.style.top = y + "px";
+    element.style.left = x + "px";
     const hasOnDrag = option && typeof option.onDrag === "function";
     if (hasOnDrag) {
       option.onDrag(element);
@@ -82,7 +88,10 @@ export function makeDragableDiv(
 
 export function dragScrollViewer(
   viewer: HTMLElement,
-  option?: { useRightMouse?: boolean; onDrag?(x: number, y: number): void }
+  option?: {
+    useRightMouse?: boolean;
+    onDrag?(x: number, y: number): void;
+  }
 ) {
   let isDragging = false;
   let originalX: number = 0;

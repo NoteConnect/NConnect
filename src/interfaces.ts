@@ -1,6 +1,7 @@
 import Link from "./models/link";
 
 export interface IRegisterNodesOption {
+  constraintNegative: boolean;
   exclude(node: HTMLDivElement): boolean;
   dragable(node: HTMLDivElement): boolean;
   onChange(): void;
@@ -45,5 +46,6 @@ export interface ILinkUI {
 }
 
 export interface IMakeDragableNodeOption {
+  constraintNegative: boolean;
   onDrag(node: HTMLElement): void;
 }
