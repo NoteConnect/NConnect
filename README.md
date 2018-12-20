@@ -1,4 +1,4 @@
-<p align="center"><img src="./assets/logo.png" width="70%" /></p>
+<p align="center"><img src="https://raw.githubusercontent.com/NoteConnect/NConnect/master/assets/logo.png" width="70%" /></p>
 
 ## About this project
 
@@ -18,7 +18,7 @@ yarn add nconnect
 
 ## Demo
 
-<p align="center"><img src="./assets/intro.gif" width="70%" /></p>
+<p align="center"><img src="https://raw.githubusercontent.com/NoteConnect/NConnect/master/assets/intro.gif" width="70%" /></p>
 
 ## Docs
 
