@@ -16,6 +16,22 @@ Initialize an instance of NConnect.
     - `y`: <[Number]> The scroll top
   - `useRightMouse`: <[Boolean]> Allow drag scroll viewer using right mouse click
 
+### nconnect.root <[HTMLElement]>
+
+The root element that NConnect is initialized on.
+
+### nconnect.nodes <[Map]<[string], [HTMLDivElement]>>
+
+The map containing the list of registered nodes.
+
+- `key` <[string]> The id of the registered node.
+- `value` <[HTMLDivElement]> The `div` associated with the registered node.
+
+### nconnect.links <[Map]<[string], [Link]>>
+
+- `key` <[string]> The id of the link.
+- `value` <[Link]> The link that connect 2 nodes. **See**: [Link]
+
 ### nconnect.registerNodes(selector, options)
 
 Register nodes to be used by the nconnect system.
@@ -113,3 +129,4 @@ Un-pin a node, opposite of `nconnect.pinNode`. Allow node to moving freely if it
 [svgpathelement]: https://developer.mozilla.org/en-US/docs/Web/API/SVGPathElement
 [number]: https://developer.mozilla.org/en-US/docs/Glossary/Number
 [mouseevent]: https://developer.mozilla.org/en-US/docs/Web/API/MouseEvent
+[map]: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Map
