@@ -14,6 +14,7 @@ export default class NConnect implements INConnectMethods {
   private links: Map<string, Link> = new Map();
   private linkRenderer: (link: Link, linkData: string) => SVGPathElement;
   private onLinkCreatedHandler: (link: Link) => void;
+  // @ts-ignore
   private svg: any;
 
   constructor(root: HTMLDivElement, option: INConnectOptions) {
