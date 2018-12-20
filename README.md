@@ -1,12 +1,24 @@
-# NConnect
-
-_A graphing library for DOM nodes_
-
-<p align="center"><img src="./assets/intro.gif" width="70%" /></p>
+<p align="center"><img src="./assets/logo.png" width="70%" /></p>
 
 ## About this project
 
-This is the graphing library that powered NoteConnect. While NoteConnect is a paid app, I decided to open source this library in MIT license.
+This is the graphing library that powered NoteConnect. It allow creating links between nodes which is HTML `div` elements.
+
+## Installation
+
+```
+npm install nconnect --save
+```
+
+OR
+
+```
+yarn add nconnect
+```
+
+## Demo
+
+<p align="center"><img src="./assets/intro.gif" width="70%" /></p>
 
 ## Docs
 
