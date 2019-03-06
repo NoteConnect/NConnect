@@ -69,7 +69,7 @@ export default class NConnect implements INConnectMethods {
               }
               makeLinkFollow.call(this, node.dataset.nodeId);
               if (hasOnChange) {
-                option.onChange();
+                option.onChange(node);
               }
             }
           });

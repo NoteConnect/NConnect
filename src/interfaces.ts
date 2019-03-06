@@ -4,7 +4,7 @@ export interface IRegisterNodesOption {
   constraintNegative: boolean;
   exclude(node: HTMLDivElement): boolean;
   dragable(node: HTMLDivElement): boolean;
-  onChange(): void;
+  onChange(node: HTMLDivElement): void;
 }
 
 export interface INConnectMethods {
