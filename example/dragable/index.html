@@ -36,7 +36,12 @@
     <script src="../../dist/nconnect.js"></script>
     <script>
       const nconnect = new NConnect(document.body);
-      nconnect.registerNodes("div", { dragable: () => true });
+      nconnect.registerNodes("div", {
+        dragable: () => true,
+        onDropNode: el => {
+          console.log(el);
+        }
+      });
       nconnect.addLink("1", "2");
     </script>
   </body>
