@@ -1,6 +1,6 @@
 {
   "name": "nconnect",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "A network graph library for DOM nodes",
   "main": "dist/nconnect.js",
   "scripts": {
