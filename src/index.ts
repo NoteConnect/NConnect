@@ -45,6 +45,7 @@ export default class NConnect implements INConnectMethods {
     const hasExclude = option && typeof option.exclude === "function";
     const hasDragable = option && typeof option.dragable === "function";
     const hasOnChange = option && typeof option.onChange === "function";
+    const hasOnDropNode = option && typeof option.onDropNode === "function";
     for (let i = 0; i < numberOfNodes; i++) {
       const node = nodes[i] as HTMLDivElement;
       if (!node.dataset.nodeId) {
@@ -70,6 +71,11 @@ export default class NConnect implements INConnectMethods {
               makeLinkFollow.call(this, node.dataset.nodeId);
               if (hasOnChange) {
                 option.onChange(node);
+              }
+            },
+            onDrop: () => {
+              if (hasOnDropNode) {
+                option.onDropNode(node);
               }
             }
           });

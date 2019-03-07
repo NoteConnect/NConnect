@@ -83,6 +83,10 @@ export function makeDragableDiv(
   function closeDragElement() {
     document.onmouseup = null;
     document.onmousemove = null;
+    const hasOnDrop = option && typeof option.onDrop === "function";
+    if (hasOnDrop) {
+      option.onDrop(element);
+    }
   }
 }
 

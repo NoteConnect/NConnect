@@ -5,6 +5,7 @@ export interface IRegisterNodesOption {
   exclude(node: HTMLDivElement): boolean;
   dragable(node: HTMLDivElement): boolean;
   onChange(node: HTMLDivElement): void;
+  onDropNode(node: HTMLDivElement): void;
 }
 
 export interface INConnectMethods {
@@ -48,4 +49,5 @@ export interface ILinkUI {
 export interface IMakeDragableNodeOption {
   constraintNegative: boolean;
   onDrag(node: HTMLElement): void;
+  onDrop(node: HTMLElement): void;
 }

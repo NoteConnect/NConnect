@@ -47,6 +47,7 @@ Register nodes to be used by the nconnect system.
     - `node` <[HTMLElement]> current node about to be registered
     - returns: <[Boolean]> Indicating a node can be dragable or not
   - `onChange`: <[function]([HTMLElement])> A function to be called when a node is dragged
+  - `onNodeDrop`: <[function]>([HTMLElement])> A function to be called when a node is stop dragged
   - `constraintNegative`: <[Boolean]> Prevent users from dragging node to negative coordinate
 
 ### nconnect.addLink(nodeId1, nodeId2, data)
